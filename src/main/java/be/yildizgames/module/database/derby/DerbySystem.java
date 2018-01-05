@@ -40,7 +40,7 @@ public class DerbySystem extends BaseDatabaseSystem {
     private final DriverProvider driver = EmbeddedDriver::new;
 
     private DerbySystem() {
-        super("jdbc:derby:target/database/${0};");
+        super("jdbc:derby:target/database/${0};create=true");
     }
 
     public static void support() {
