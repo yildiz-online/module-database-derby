@@ -24,41 +24,15 @@
 
 package be.yildizgames.module.database.derby;
 
-import be.yildizgames.module.database.BaseDatabaseSystem;
-import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
-import be.yildizgames.module.database.DriverProvider;
-import org.apache.derby.jdbc.EmbeddedDriver;
-import org.jooq.SQLDialect;
+import be.yildizgames.module.database.DatabaseSystemRegisterer;
 
 /**
  * @author Grégory Van den Borre
  */
-public class DerbySystem extends BaseDatabaseSystem {
-
-    public static final String KEY = "derby-file";
-
-    private final DriverProvider driver = EmbeddedDriver::new;
-
-    private DerbySystem() {
-        super("jdbc:derby:target/database/${0};create=true");
-    }
-
-    public static void support() {
-        DatabaseConnectionProviderFactory.getInstance().addSystem(KEY, new DerbySystem());
-    }
+public class DerbySystemRegisterer implements DatabaseSystemRegisterer {
 
     @Override
-    public SQLDialect getDialect() {
-        return SQLDialect.DERBY;
-    }
-
-    @Override
-    public String getDriver() {
-        return "org.apache.derby.jdbc.EmbeddedDriver";
-    }
-
-    @Override
-    public DriverProvider getDriverProvider() {
-        return this.driver;
+    public void register() {
+        DerbySystem.support();
     }
 }
