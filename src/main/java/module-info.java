@@ -23,6 +23,7 @@
  */
 
 module be.yildizgames.module.database.derby {
+    requires java.sql;
 
     requires be.yildizgames.module.database;
 
