@@ -1,4 +1,4 @@
-/*
+ /*
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
  *  Copyright (c) 2018 Grégory Van den Borre
@@ -21,55 +21,21 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
-
 package be.yildizgames.module.database.derby;
 
-import be.yildizgames.module.database.BaseDatabaseSystem;
-import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
-import be.yildizgames.module.database.DriverProvider;
 import be.yildizgames.module.database.QueryBuilder;
-import org.apache.derby.jdbc.EmbeddedDriver;
-import org.jooq.SQLDialect;
 
-/**
- * @author Grégory Van den Borre
- */
-public class DerbySystem extends BaseDatabaseSystem {
+public class DerbyQueryBuilder extends QueryBuilder {
 
-    public static final String KEY = "derby-file";
-
-    private final DriverProvider driver = EmbeddedDriver::new;
-
-    private DerbySystem() {
-        super("jdbc:derby:target/database/${0};create=true");
-    }
-
-    public static void support() {
-        DatabaseConnectionProviderFactory.getInstance().addSystem(KEY, new DerbySystem());
+    @Override
+    public QueryBuilder selectAllFrom(String table) {
+        this.append("SELECT * FROM " + table + " ");
+        return this;
     }
 
     @Override
-    public SQLDialect getDialect() {
-        return SQLDialect.DERBY;
-    }
-
-    @Override
-    public String getDriver() {
-        return "org.apache.derby.jdbc.EmbeddedDriver";
-    }
-
-    @Override
-    public DriverProvider getDriverProvider() {
-        return this.driver;
-    }
-
-    @Override
-    public QueryBuilder createBuilder() {
-        return new DerbyQueryBuilder();
-    }
-
-    @Override
-    public boolean requirePool() {
-        return false;
+    public QueryBuilder limit(int number) {
+        this.append("fetch first " + number + " rows only ");
+        return this;
     }
 }
