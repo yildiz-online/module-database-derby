@@ -41,10 +41,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DerbySystemTest {
 
     @Nested
-    class Support {
+    public class Support {
 
         @Test
-        void happyFlow() throws SQLException {
+        public void happyFlow() throws SQLException {
             DerbySystem.support();
             DbProperties properties = new DerbyProperties();
             DataBaseConnectionProvider dcp = DatabaseConnectionProviderFactory.getInstance().create(properties);
