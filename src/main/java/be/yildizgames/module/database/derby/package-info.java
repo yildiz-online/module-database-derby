@@ -24,6 +24,7 @@
 
 /**
  * Contains the classes to connect to a derby system.
+ *
  * @author Grégory Van den Borre
  */
 package be.yildizgames.module.database.derby;
