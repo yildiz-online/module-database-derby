@@ -32,7 +32,7 @@ import be.yildizgames.module.database.DatabaseSystemRegisterer;
 public class DerbySystemRegisterer implements DatabaseSystemRegisterer {
 
     @Override
-    public void register() {
+    public final void register() {
         DerbySystem.support();
     }
 }

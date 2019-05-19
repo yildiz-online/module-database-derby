@@ -69,7 +69,7 @@ public class DerbySystem extends BaseDatabaseSystem {
     }
 
     @Override
-    public boolean requirePool() {
+    public final boolean requirePool() {
         return false;
     }
 }

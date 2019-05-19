@@ -25,7 +25,10 @@ package be.yildizgames.module.database.derby;
 
 import be.yildizgames.module.database.QueryBuilder;
 
-public class DerbyQueryBuilder extends QueryBuilder {
+ /**
+  * @author Grégory Van den Borre
+  */
+ public class DerbyQueryBuilder extends QueryBuilder {
 
     @Override
     public QueryBuilder selectAllFrom(String table) {
