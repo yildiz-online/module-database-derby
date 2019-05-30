@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
   ~ This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
   ~
@@ -23,29 +24,32 @@
   ~
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-  <name>Yildiz Module Database Derby</name>
+
+  <name>Yildiz-Engine Module Database Derby</name>
   <description>Derby implementation for the module database</description>
-  <url>https://bitbucket.org/yildiz-engine-team/module-database-derby</url>
+  <inceptionYear>2017</inceptionYear>
+  <url>https://engine.yildiz-games.be</url>
 
   <artifactId>module-database-derby</artifactId>
   <version>1.0.5-SNAPSHOT</version>
 
-  <packaging>jar</packaging>
-  <inceptionYear>2017</inceptionYear>
-  <scm>
-    <connection>scm:git:https://bitbucket.org/yildiz-engine-team/module-database-derby</connection>
-    <developerConnection>scm:git:https://bitbucket.org/yildiz-engine-team/module-database-derby</developerConnection>
-    <url>https://bitbucket.org/yildiz-engine-team/module-database-derby</url>
-  </scm>
   <parent>
     <groupId>be.yildiz-games</groupId>
     <artifactId>parent</artifactId>
     <version>3.0.5</version>
   </parent>
+
+  <packaging>jar</packaging>
+
+  <scm>
+    <connection>scm:git:https://github.com/yildiz-online/module-database-derby</connection>
+    <developerConnection>scm:git:https://github.com/yildiz-online/module-database-derby</developerConnection>
+    <url>https://github.com/yildiz-online/module-database-derby</url>
+  </scm>
 
   <dependencies>
     <dependency>
