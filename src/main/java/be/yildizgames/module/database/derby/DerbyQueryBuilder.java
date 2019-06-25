@@ -36,7 +36,12 @@ import be.yildizgames.module.database.QueryBuilder;
         return this;
     }
 
-    @Override
+     @Override
+     public QueryBuilder selectAllFrom(String schema, String table) {
+         return this.selectAllFrom("\"" + schema + "\"." + table);
+     }
+
+     @Override
     public QueryBuilder limit(int number) {
         this.append("fetch first " + number + " rows only ");
         return this;
