@@ -29,7 +29,6 @@ import be.yildizgames.module.database.DatabaseConnectionProviderFactory;
 import be.yildizgames.module.database.DriverProvider;
 import be.yildizgames.module.database.QueryBuilder;
 import org.apache.derby.jdbc.EmbeddedDriver;
-import org.jooq.SQLDialect;
 
 /**
  * @author Grégory Van den Borre
@@ -46,11 +45,6 @@ public class DerbySystem extends BaseDatabaseSystem {
 
     public static void support() {
         DatabaseConnectionProviderFactory.getInstance().addSystem(KEY, new DerbySystem());
-    }
-
-    @Override
-    public SQLDialect getDialect() {
-        return SQLDialect.DERBY;
     }
 
     @Override

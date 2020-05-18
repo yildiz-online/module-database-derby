@@ -28,7 +28,6 @@ module be.yildizgames.module.database.derby {
     requires be.yildizgames.module.database;
 
     requires org.apache.derby.tools;
-    requires org.jooq;
 
     exports be.yildizgames.module.database.derby;
 }
