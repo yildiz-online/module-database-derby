@@ -58,8 +58,8 @@ public class DerbySystem extends BaseDatabaseSystem {
     }
 
     @Override
-    public QueryBuilder createBuilder() {
-        return new DerbyQueryBuilder();
+    public QueryBuilder createBuilder(String table) {
+        return new DerbyQueryBuilder(table);
     }
 
     @Override

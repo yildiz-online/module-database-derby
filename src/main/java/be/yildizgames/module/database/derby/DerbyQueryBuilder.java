@@ -28,17 +28,21 @@ import be.yildizgames.module.database.QueryBuilder;
  /**
   * @author Grégory Van den Borre
   */
- public class DerbyQueryBuilder extends QueryBuilder {
+ class DerbyQueryBuilder extends QueryBuilder {
 
-    @Override
-    public QueryBuilder selectAllFrom(String table) {
-        this.append("SELECT * FROM " + table + " ");
-        return this;
-    }
+     DerbyQueryBuilder(String table) {
+         super(table);
+     }
 
      @Override
-     public QueryBuilder selectAllFrom(String schema, String table) {
-         return this.selectAllFrom("\"" + schema + "\"." + table);
+     public QueryBuilder selectAllFrom() {
+        this.append("SELECT * FROM " + this.table + " ");
+        return this;
+     }
+
+     @Override
+     public QueryBuilder selectAllFrom(String schema) {
+         return this.selectAllFrom("\"" + schema + "\"." + this.table);
      }
 
      @Override
@@ -46,4 +50,9 @@ import be.yildizgames.module.database.QueryBuilder;
         this.append("fetch first " + number + " rows only ");
         return this;
     }
-}
+
+     @Override
+     public QueryBuilder merge(String s, String... strings) {
+         return null;
+     }
+ }
