@@ -5,7 +5,7 @@ language: generic
 git:
   depth: false
 
-dist: xenial
+dist: jammy
 
 cache:
   directories:
